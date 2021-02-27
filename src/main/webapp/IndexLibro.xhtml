@@ -39,8 +39,10 @@
 										</div>
 										<div class="form-group">
 											<h:outputLabel value="Autor: " />
-											<h:selectOneMenu value="#{libroBean.libro.id}" >
-											
+											<h:selectOneMenu id="autor" value="#">
+												<f:selectItem itemLabel="SELECCIONE" itemValue="#{libroBean.libro.id}"/>
+												<f:selectItem value="#{libroBean.listasAutores}"/>
+											</h:selectOneMenu>
 										</div>
 
 									</h:form>

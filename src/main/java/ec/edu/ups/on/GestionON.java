@@ -3,6 +3,7 @@
  */
 package ec.edu.ups.on;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -32,13 +33,14 @@ public class GestionON implements GestionONLocal{
 	@Inject
 	private CategoriaDAO categoriaDAO;
 	
+	private List<Autor> autorL;
 	
 	public void guardarLibro(Libro l) {
 		libroDAO.insertlib(l);
 	}
 	
 	public List<Autor> listasAutores(){
-		return autorDAO.getAutores();
+		return new ArrayList<>(autorDAO.getAutores());
 	}
 	
 	public List<Categoria> listasCategorias(){

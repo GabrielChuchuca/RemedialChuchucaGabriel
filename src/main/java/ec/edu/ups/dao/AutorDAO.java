@@ -24,7 +24,7 @@ public class AutorDAO {
 	
 	public List<Autor> getAutores(){
 		String jpql = "SELECT a FROM Autor a";
-		Query q = em.createQuery(jpql, Autor.class);
+		Query q = em.createNativeQuery(jpql, Autor.class);
 		return q.getResultList();
 	}
 	
