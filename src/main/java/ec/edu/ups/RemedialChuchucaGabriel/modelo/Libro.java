@@ -5,6 +5,7 @@ package ec.edu.ups.RemedialChuchucaGabriel.modelo;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,7 +39,8 @@ public class Libro implements Serializable{
 	@JoinColumn(name = "autor_id")
 	private Autor autor;
 	
-	@OneToOne()
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
+	@JoinColumn(name = "id_categoria")
 	private Categoria categoria;
 	
 	
@@ -49,12 +51,14 @@ public class Libro implements Serializable{
 		
 	}
 
+
 	/**
 	 * @return the id
 	 */
 	public int getId() {
 		return id;
 	}
+
 
 	/**
 	 * @param id the id to set
@@ -63,12 +67,14 @@ public class Libro implements Serializable{
 		this.id = id;
 	}
 
+
 	/**
 	 * @return the nombre
 	 */
 	public String getNombre() {
 		return nombre;
 	}
+
 
 	/**
 	 * @param nombre the nombre to set
@@ -77,12 +83,14 @@ public class Libro implements Serializable{
 		this.nombre = nombre;
 	}
 
+
 	/**
 	 * @return the anio
 	 */
 	public int getAnio() {
 		return anio;
 	}
+
 
 	/**
 	 * @param anio the anio to set
@@ -91,12 +99,14 @@ public class Libro implements Serializable{
 		this.anio = anio;
 	}
 
+
 	/**
 	 * @return the stock
 	 */
 	public int getStock() {
 		return stock;
 	}
+
 
 	/**
 	 * @param stock the stock to set
@@ -105,12 +115,14 @@ public class Libro implements Serializable{
 		this.stock = stock;
 	}
 
+
 	/**
 	 * @return the autor
 	 */
 	public Autor getAutor() {
 		return autor;
 	}
+
 
 	/**
 	 * @param autor the autor to set
@@ -119,11 +131,27 @@ public class Libro implements Serializable{
 		this.autor = autor;
 	}
 
+
+	/**
+	 * @return the categoria
+	 */
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	/**
+	 * @param categoria the categoria to set
+	 */
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Libro [id=" + id + ", nombre=" + nombre + ", anio=" + anio + ", stock=" + stock + ", autor=" + autor
-				+ "]";
+				+ ", categoria=" + categoria + "]";
 	}
-
 	
 }

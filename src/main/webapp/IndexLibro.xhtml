@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- <ui:composition template="">
+	</ui:>-->
+<h:head>
+	<title>SISTEMA</title>
+</h:head>
+<h:body>
+	<h1>CREAR PRODUCTO</h1>
+	<ui:composition template="template/template.xhtml">
+		<ui:define name="title"> Crear Productos</ui:define>
+		<ui:define name="content">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+
+						<div class="panel-body">
+							<p:growl id="message" showDetail="true" class="ui-growl"
+								life="4000" />
+							<div class="row">
+								<div class="col-lg-6">
+									<h:form>
+										<div class="form-group">
+											<h:outputLabel value="Nombre: " />
+											<h:inputText value="#{libroBean.libro.nombre}" />
+										</div>
+										<div class="form-group">
+											<h:outputLabel value="Año: " />
+											<h:inputText value="#{libroBean.libro.anio}" />
+										</div>
+										<div class="form-group">
+											<h:outputLabel value="Stock: " />
+											<h:inputText value="#{libroBean.libro.stock}" />
+										</div>
+										<div class="form-group">
+											<h:outputLabel value="Autor: " />
+											<h:selectOneMenu value="#{libroBean.libro.id}" >
+											
+										</div>
+
+									</h:form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
